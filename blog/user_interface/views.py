@@ -90,23 +90,3 @@ def logoutUser(request):
     return redirect('home')
 
 
-def block_user(request, pk):
-    user=User.objects.get(pk=pk)
-    if user.is_blocked:
-        user.is_blocked=False
-        user.save()
-    else:
-        user.is_blocked=True
-        user.save()
-    return redirect('show-users')
-
-
-def promote_user(request, pk):
-    user=User.objects.get(pk=pk)
-    if user.is_superuser:
-        user.is_superuser=False
-        user.save()
-    else:
-        user.is_superuser=True
-        user.save()
-    return redirect('show-users')

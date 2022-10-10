@@ -22,14 +22,14 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav style="    background-color: #c8c585;     border-bottom: 12px solid #c8c585;" class="navbar navbar-expand-lg p-3 mb-5">
+    <nav style="    background-color: crimson;     border-bottom: 12px solid crimson;" class="navbar navbar-expand-lg p-3 mb-5">
         <div class="container d-flex">
-            <a style="font-size:180%;" class="navbar-brand justify-content-start" href="{% url 'home' %}">My Blog</a>
+            <a style="font-size:170%; font-weight: 350; color:#000;"   class="navbar-brand justify-content-start" href="{% url 'home' %}">My Blog</a>
             <div style="width: 30%;" id="searchbar">
                         <div class="search-box">
                             <!-- Search form -->
                             <form action="{% url 'home' %}" method="GET">
-                                <button style="    background-color: #fef9f8;" class="btn-search" type="submit"><i style="  color: #0d0d0d" class="fa-solid fa-magnifying-glass"></i></button>
+                                <button style="    background-color: #fef9fa;" class="btn-search" type="submit"><i style="  color: #0d0d0d" class="fa-solid fa-magnifying-glass"></i></button>
                                 <input type="text" name="q" class="input-search" placeholder="Search...">
                                 <input type="submit" hidden />
                             </form>
@@ -42,29 +42,29 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                        <a style="font-size:115%;" class="nav-link" href="{% url 'home' %}">HOME</a>
                     </li>
 
                     {% if not user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+                            <a style="font-size:115%;" class="nav-link" href="{% url 'login' %}">LOGIN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}">REGISTER</a>
+                            <a style="font-size:115%;" class="nav-link" href="{% url 'register' %}">REGISTER</a>
                         </li>
                     {% else %}
                         {% if user.subscribed_categories.all %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'subscribed_cats' %}">SUBSCRIBED CATEGORIES</a>
+                            <a style="font-size:115%;" class="nav-link" href="{% url 'subscribed_cats' %}">SUBSCRIBED CATEGORIES</a>
                         </li>
                         {% endif %}
                         {% if user.is_superuser %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'admin:index' %}">MANAGE BLOG</a>
+                            <a style="font-size:115%;" class="nav-link" href="{% url 'admin:index' %}">MANAGE BLOG</a>
                         </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+                            <a style="font-size:115%;" class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
                         </li>
                     {% endif %}
                 </ul>

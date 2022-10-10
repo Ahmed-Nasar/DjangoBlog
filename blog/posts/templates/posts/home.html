@@ -4,6 +4,7 @@
 
 {% block body %}
 <style>
+
 .pagination {
     margin: 50px 0;
     padding-bottom: 50px;
@@ -57,13 +58,13 @@
     <!-- side bar -->
     <div>
         <div class="container">
-            <h1 class="text-center"> {{title}}</h1>
+            <h2 class="text-center"> {{title}}</h2>
             <div class="row">
                 <div class="col">
                     <div class="row">
                         <!-- Posts -->
                         {% if not object_list %}
-                        <h2 class="text-center">No Posts</h2>
+                        <h2  class="text-center">No Posts</h2>
                         {% endif %}
                         {% for obj in object_list %}
                         <div class="">
@@ -104,7 +105,7 @@
                                     <a href="{% url 'show_category' cat.id %}" class="btn btn-outline-light">{{cat.name}}</a>
                                     {% if user.is_authenticated %}
                                         <a href="{% url 'subscribe' cat.id %}" class="text-center">
-                                            <button style="    background-color: #a7a252"; class="btn btn-secondary btn-sm subscribe">
+                                            <button style="    background-color: firebrick"; class="btn btn-secondary btn-sm subscribe">
                                                 {% if cat in user.subscribed_categories.all %}
                                                 UNSUBSCRIBE
                                                 {% else %}
@@ -114,7 +115,7 @@
                                         </a>
                                     {% else %}
                                         <a href="{% url 'subscribe' cat.id %}" class="text-center">
-                                            <button style="    background-color: #a7a252"; class="btn btn-secondary btn-sm subscribe">SUBSCRIBE</button>
+                                            <button style="    background-color: firebrick"; class="btn btn-secondary btn-sm subscribe">SUBSCRIBE</button>
                                         </a>
                                     {% endif %}
                                 </li>

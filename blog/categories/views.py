@@ -43,15 +43,13 @@ def subscribe(request, pk):
         request.user.subscribed_categories.remove(cat)
         messages.success(request, "Unsubscribed Successfully!")
         msg=f"Hello {request.user.username} you have unsubscribed successfully in {cat.name}"
-        # email = EmailMessage('Subject', msg, to=[request.user.email])
-        # email.send()
+
 
     else:
         request.user.subscribed_categories.add(cat)
         messages.success(request, "Subscribed Successfully!")
         msg=f"Hello {request.user.username} you have subscribed successfully in {cat.name} welcome  aboard"
-        # email = EmailMessage('Subject', msg, to=[request.user.email])
-        # email.send()
+
 
     
     return redirect(request.META.get('HTTP_REFERER', '/'))
